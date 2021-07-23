@@ -1,7 +1,7 @@
-# Self-Supervised Domain Adaptation with Consistency Training
+# Unsupervised Domain Adaptation by Backpropagation
 [![arXiv](https://img.shields.io/badge/arXiv-1409.7495-b31b1b.svg)](https://arxiv.org/abs/1409.7495)
 
-Pytorch implementation for the paper ["Unsupervised Domain Adaptation by Backpropagation"](https://arxiv.org/abs/1409.7495).
+Pytorch implementation for the **Gradient Reversal Layer** in paper ["Unsupervised Domain Adaptation by Backpropagation"](https://arxiv.org/abs/1409.7495).
 
 ```
 @misc{ganin2015unsupervised,
@@ -13,6 +13,36 @@ Pytorch implementation for the paper ["Unsupervised Domain Adaptation by Backpro
       primaryClass={stat.ML}
 }
 ```
+
+# Gradient Reversal Layer
+
+
+| ![](images/grl.png) | 
+|:--:| 
+| *Gradient Reversal Layer* |
+
+During the forward
+propagation, Gradient Reversal Layer(GRL) acts as an identity transform. During
+the backpropagation though, GRL takes the gradient from
+the subsequent level, multiplies it by $−\alpha$ and passes it to
+the preceding layers.
+
+
+### forward pass: $R_\alpha (x) = x$
+
+
+### backward pass: $\displaystyle \frac{dR_\alpha}{dx} = -\alpha x$
+
+### where:
+- $R$ is the Gradient Rervesal function
+- $x$ is the input tensor
+- $\alpha$ is the scaling factor for the reversed gradients.
+
+
+| ![](images/result.png) | 
+|:--:| 
+| *Features on MNIST and SVHN* |
+
 
 # Usage
 
