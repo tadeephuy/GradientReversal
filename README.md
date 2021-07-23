@@ -24,19 +24,19 @@ Pytorch implementation for the **Gradient Reversal Layer** in paper ["Unsupervis
 During the forward
 propagation, Gradient Reversal Layer(GRL) acts as an identity transform. During
 the backpropagation though, GRL takes the gradient from
-the subsequent level, multiplies it by $−\alpha$ and passes it to
+the subsequent level, multiplies it by α (or λ in image) and passes it to
 the preceding layers.
 
 
-### forward pass: $R_\alpha (x) = x$
+### forward pass: ![image](https://quicklatex.com/cache3/c7/ql_0e1cd0886323d96442d8258d2a0723c7_l3.png)
 
 
-### backward pass: $\displaystyle \frac{dR_\alpha}{dx} = -\alpha x$
+### backward pass: ![image](https://quicklatex.com/cache3/99/ql_75fae9ade44cfa85ce4da26128d32799_l3.png)
 
 ### where:
-- $R$ is the Gradient Rervesal function
-- $x$ is the input tensor
-- $\alpha$ is the scaling factor for the reversed gradients.
+- R is the Gradient Rervesal function
+- x is the input tensor
+- α is the scaling factor for the reversed gradients.
 
 
 | ![](images/result.png) | 
@@ -54,7 +54,7 @@ from gradient_reversal import GradientReversal
 # define a network with Gradient Reversal Layer
 net = nn.Sequential(
       nn.Linear(10, 10),
-      nn.GradientReversal(alpha=1.)
+      GradientReversal(alpha=1.)
 )
 ```
 
@@ -78,8 +78,8 @@ y_rev = y_rev+6
 y.backward()
 y_rev.backward()
 
-print(f'x gradient: {x.grad}')
-print(f'reversed x gradient: {x_rev.grad}')
+print(f'x gradient: {x.grad}') # 5
+print(f'reversed x gradient: {x_rev.grad}') # -5
 
 assert x.grad==-x_rev.grad
 ```
