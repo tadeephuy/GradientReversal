@@ -17,7 +17,7 @@ Pytorch implementation for the paper ["Unsupervised Domain Adaptation by Backpro
 # Usage
 
 As module
-```
+```python
 from torch import nn
 from gradient_reversal import GradientReversal
 
@@ -29,7 +29,7 @@ net = nn.Sequential(
 ```
 
 As function
-```
+```python
 import torch
 from gradient_reversal import revgrad
 
