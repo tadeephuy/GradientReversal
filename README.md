@@ -24,19 +24,30 @@ Pytorch implementation for the **Gradient Reversal Layer** in paper ["Unsupervis
 During the forward
 propagation, Gradient Reversal Layer(GRL) acts as an identity transform. During
 the backpropagation though, GRL takes the gradient from
-the subsequent level, multiplies it by α (or λ in image) and passes it to
+the subsequent level, multiplies it by **α** (or **λ** in image) and passes it to
 the preceding layers.
 
 
-### forward pass: ![image](https://quicklatex.com/cache3/c7/ql_0e1cd0886323d96442d8258d2a0723c7_l3.png)
+### forward pass: 
 
+<div align="center">
 
-### backward pass: ![image](https://quicklatex.com/cache3/99/ql_75fae9ade44cfa85ce4da26128d32799_l3.png)
+![image](https://quicklatex.com/cache3/c7/ql_0e1cd0886323d96442d8258d2a0723c7_l3.png)
+
+</div>
+
+### backward pass: 
+
+<div align="center">
+
+![image](https://quicklatex.com/cache3/99/ql_75fae9ade44cfa85ce4da26128d32799_l3.png)
+
+</div>
 
 ### where:
-- R is the Gradient Rervesal function
-- x is the input tensor
-- α is the scaling factor for the reversed gradients.
+- **R** is the Gradient Rervesal function
+- **x** is the input tensor
+- **α** is the scaling factor for the reversed gradients.
 
 
 | ![](images/result.png) | 
