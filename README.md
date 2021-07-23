@@ -94,3 +94,7 @@ print(f'reversed x gradient: {x_rev.grad}') # -5
 
 assert x.grad==-x_rev.grad
 ```
+
+# References
+
+[1] Yaroslav Ganin, & Victor Lempitsky. (2015). Unsupervised Domain Adaptation by Backpropagation.
