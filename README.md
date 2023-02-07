@@ -28,27 +28,6 @@ the subsequent level, multiplies it by **α** (or **λ** in image) and passes it
 the preceding layers.
 
 
-### forward pass: 
-
-<div align="center">
-
-![image](https://quicklatex.com/cache3/c7/ql_0e1cd0886323d96442d8258d2a0723c7_l3.png)
-
-</div>
-
-### backward pass: 
-
-<div align="center">
-
-![image](https://quicklatex.com/cache3/99/ql_75fae9ade44cfa85ce4da26128d32799_l3.png)
-
-</div>
-
-### where:
-- **R** is the Gradient Rervesal function
-- **x** is the input tensor
-- **α** is the scaling factor for the reversed gradients.
-
 
 | ![](images/result.png) | 
 |:--:| 
